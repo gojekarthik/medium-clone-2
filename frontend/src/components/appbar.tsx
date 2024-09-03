@@ -94,14 +94,3 @@ export function Appbar({btnType}:{btnType:string}) {
   );
 }
 
-// const buttonHandler = async ({btnType}:{btnType:string}) => {
-//   if(btnType==="New Blog"){
-//     return<Link to={'/blog/create'}></Link>
-//   }
-//   const response = await axios.post(
-//     BACKEND_URL + "/api/v1/blog/create" ,
-//     postInputs
-//   );
-//   localStorage.setItem("token",response.data.token)
-//   navigate("/blog");
-// };

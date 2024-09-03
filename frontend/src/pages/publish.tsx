@@ -15,7 +15,7 @@ export const Publish = () => {
   });
 
   async function handleClick(){
-    const response = await axios.post(`${BACKEND_URL}/api/v1/blog/create`,post,{
+    await axios.post<PublishPost>(`${BACKEND_URL}/api/v1/blog/create`,post,{
         headers:{
             "Authorization":localStorage.getItem("token")
         }
