@@ -1,3 +1,5 @@
+
+
 interface Props {
   authorName: string;
   publishedDate: string;
@@ -12,8 +14,8 @@ export const BlogCard = ({
   context,
 }: Props) => {
   return (
-    <div className="w-fit m-5">
-      <div className="flex pb-2">
+    <div className="w-full my-5 cursor-pointer">
+      <div className="flex pb-2 pr-2">
         <Avatar name={authorName[0]} />
         <div className="pl-2 hover:underline">{authorName} </div>
         <div
@@ -21,10 +23,10 @@ export const BlogCard = ({
           {publishedDate}
         </div>
       </div>
-      <div className="font-extrabold text-2xl pb-2 hover:underline">{title}</div>
-      <div className="font-serif">{context.substring(0, 200) + ".."}</div>
+      <div className="font-extrabold text-2xl pb-2 hover:underline max-w-xl">{title}</div>
+      <div className="font-serif max-w-xl">{context.substring(0, 200) + ".."}</div>
       <div className="text-sm font-serif pl-px pt-1 text-slate-500">{Math.floor(context.length/100)+" minutes"}</div>
-      <hr className="h-px my-5 pl-2 bg-gray-200 border-0 dark:bg-gray-700"/>
+      <hr className="h-px my-5 pl-2 w bg-gray-200 border-0 dark:bg-gray-700"/>
     </div>
   );
 };

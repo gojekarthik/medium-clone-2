@@ -31,3 +31,6 @@ lerna-debug.log*
 
 # misc
 .DS_Store
+
+DATABASE_URL = "prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiMzdlODM5ZTYtOTdlOC00ZTljLWJlY2EtODE5NjY0MTAyN2Q1IiwidGVuYW50X2lkIjoiMWU3NmQwMzUyNzY4ZjY0MWE2NWMxODBhNzUwZDAwZDViMjE3MzY3NjlhNjMzYWIzNTUzOTZiMDRhZTAxMGQ5ZiIsImludGVybmFsX3NlY3JldCI6ImI3MDZjZTk1LWNkNTQtNGFjYy04MDllLTM1ZjJhMGI5MmZiNyJ9.uXpywtLL5o_J5oFYrDD3w-tenrxTa56oZtcd9zJbZ9M"
+JWT_SECRET = "thisissecretkey"

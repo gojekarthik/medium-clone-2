@@ -13,6 +13,7 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
   });
 
   const buttonHandler = async () => {
+    console.log(postInputs)
     const response = await axios.post(
       BACKEND_URL + "/api/v1/user/" + (type === "signup" ? "signup" : "signin"),
       postInputs

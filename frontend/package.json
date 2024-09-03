@@ -13,7 +13,8 @@
     "@medium-common-module/medium-common": "^1.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.1"
+    "react-router-dom": "^6.26.1",
+    "recoil": "^0.7.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
