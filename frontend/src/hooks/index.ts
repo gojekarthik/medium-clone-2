@@ -34,15 +34,30 @@ export const useBlogs = ()=>{
 }
 
 
+interface Blog{
+    context:string,
+    title:string,
+    id:Number,
+    author:{
+        name:string
+    }
+    }
 
 
 
 export const useBlog = ({id}:{id:string})=>{
     const [loading,setLoading] = useState(true);
-    const [blog,setBlog] = useState<Blogs[]>([]);
+    const [blog,setBlog] = useState<Blog>({
+        title:"",
+        context:"",
+        id: 1,
+        author:{
+            name:""
+        }
+    });
 
     useEffect(()=>{
-        axios.get(`${BACKEND_URL}/api/v1/blog/${id} `,{
+        axios.get(`${BACKEND_URL}/api/v1/blog/${id}`,{
             headers:{
                 "Authorization":localStorage.getItem("token")
             }
