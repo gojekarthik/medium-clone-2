@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Appbar } from "../components/appbar";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import { BACKEND_URL } from "../config";
 
 interface PublishPost {
@@ -15,7 +15,7 @@ export const Publish = () => {
   });
 
   async function handleClick(){
-    await axios.post<PublishPost>(`${BACKEND_URL}/api/v1/blog/create`,post,{
+    await axios.post<AxiosResponse>(`${BACKEND_URL}/api/v1/blog/create`,post,{
         headers:{
             "Authorization":localStorage.getItem("token")
         }
