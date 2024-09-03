@@ -13,11 +13,11 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
   });
 
   const buttonHandler = async () => {
-    await axios.post(
+    const response = await axios.post(
       BACKEND_URL + "/api/v1/user/" + (type === "signup" ? "signup" : "signin"),
       postInputs
     );
-
+    localStorage.setItem("token",response.data.token)
     navigate("/blog");
   };
 
