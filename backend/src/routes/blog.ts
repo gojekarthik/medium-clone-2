@@ -108,6 +108,16 @@ blogRouter.get("/:id", async (c) => {
       where: {
         id: Number(id),
       },
+      select:{
+        id:true,
+        title:true,
+        context:true,
+        author:{
+          select:{
+            name:true
+          }
+        }
+      }
     });
     console.log("got the blog details");
     return c.json({
