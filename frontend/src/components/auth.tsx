@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
 import { useNavigate } from "react-router-dom";
-
-
-
 export const Auth = ({ type }: { type: "signup" | "signin" }) => {
   const navigate = useNavigate();
   const [postInputs, setPostInputs] = useState<SignupInput>({
@@ -15,15 +12,14 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
     name: "",
   });
 
+  const buttonHandler = async () => {
+    await axios.post(
+      BACKEND_URL + "/api/v1/user/" + (type === "signup" ? "signup" : "signin"),
+      postInputs
+    );
 
-const buttonHandler = async ()=>{
-  const response = await axios.post(
-    BACKEND_URL + "/api/v1/user/" + (type === "signup" ? "signup" : "signin"),
-    postInputs
-  );
-  navigate('/blog')
-}
-
+    navigate("/blog");
+  };
 
   return (
     <div className=" h-screen flex justify-center items-center flex-col">
@@ -88,7 +84,10 @@ const buttonHandler = async ()=>{
           });
         }}
       />
-      <button onClick={buttonHandler} className="bg-black   text-white p-1 rounded-md">
+      <button
+        onClick={buttonHandler}
+        className="bg-black   text-white p-1 rounded-md"
+      >
         {type === "signup" ? "Sign Up" : "Sign in"}
       </button>
     </div>
