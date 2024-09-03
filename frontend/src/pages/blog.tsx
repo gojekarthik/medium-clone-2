@@ -16,7 +16,7 @@ export function Blog() {
 
   return (
     <div className="w-full">
-      <Appbar />
+      <Appbar btnType="New Blog"/>
       <div className="flex">
         <div className="grid w-2/3 px-4">
           {/* <div className="font-extrabold text-5xl p-4 ">{blog.title}</div> */}

@@ -14,7 +14,7 @@ if(loading){
 
   return (
     <div className="w-full">
-      <Appbar/>
+      <Appbar btnType="New Blog"/>
       
       <div className="mx-auto px-3 max-w-3xl">
       {blogs.map(blog=> <Link to={"/blog/"+blog.id}><BlogCard
