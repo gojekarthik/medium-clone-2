@@ -23,7 +23,14 @@ import { BACKEND_URL } from "../config";
 
 export const useBlogs = () => {
   const [loading, setLoading] = useState(true);
-  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [blogs, setBlogs] = useState<Blog[]>([{
+    title:"",
+    context:"",
+    id: "",
+    author:{
+        name:""
+    }
+}]);
 
   useEffect(() => {
     axios.get<BlogsResponse>(`${BACKEND_URL}/api/v1/blog/bulk`, {

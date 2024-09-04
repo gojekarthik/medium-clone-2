@@ -5,8 +5,8 @@ import { useBlogs } from "../hooks/index";
 
 export function BlogHome() {
   const { loading, blogs } = useBlogs();
-  console.log(blogs);
 
+  console.log(blogs);
   if (loading) {
     return (
       <div className="w-full">
