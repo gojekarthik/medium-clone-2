@@ -28,7 +28,7 @@ export const useBlogs = () => {
   useEffect(() => {
     axios.get<BlogsResponse>(`${BACKEND_URL}/api/v1/blog/bulk`, {
       headers: {
-        "Authorization": `Bearer ${localStorage.getItem("token")}`,
+        "Authorization": localStorage.getItem("token"),
       },
     })
     .then((response: AxiosResponse<BlogsResponse>) => {
